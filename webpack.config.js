@@ -6,6 +6,7 @@ var ReloadPlugin = require('webpack-reload-plugin');
 
 
 module. exports = {
+    target: "web",
     entry: {
         app: './src/index.js',
         ser: './src/index.js'
@@ -66,6 +67,10 @@ module. exports = {
     devServer: {
         overlay: true,
         watchContentBase: true,
+        publicPath: "/dist",
+        contentBase: path.resolve(__dirname, "./"),
+        compress: true,
+        port: 9001
     },
     plugins: [
         new MiniCssExtractPlugin({
